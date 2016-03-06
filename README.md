@@ -1,7 +1,7 @@
 # Shell script for combining tranmission and plex
 
 INFO :
-The scipt is usefull if you needto separate your download folder from your data folder (seeding torrent from a raid partition is
+The script is usefull if you needto separate your download folder from your data folder (seeding torrent from a raid partition is
 not recommended).
 
 REQUIREMENT :
