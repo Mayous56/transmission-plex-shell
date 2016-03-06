@@ -36,7 +36,7 @@ do
                         PLACE=`echo $LOCATION | grep -n "Location"`
                         if [ "$PLACE" == "" ]
                         then
-                                sudo -u "$PLEXUSER" mkdir "$MEDIADIR$LOCATION"
+                                sudo -u "$PLEXUSER" mkdir -p "$MEDIADIR$LOCATION"
                                 sudo -u "$PLEXUSER" rsync -ra "$DOWNLOADDIR$LOCATION/$NAME" "$MEDIADIR$LOCATION"
                                 TRANSMITTED=`transmission-remote --auth "$AUTH" --torrent "$TORRENTID" --move "$FINISHEDDIR$LOCATION"`
                                 echo "Torrent #$TORRENTID : #$NAME déplacé dans media et finished"
