@@ -19,6 +19,7 @@ The current path (for instance, /home/torrent/download/movie/new) will be also c
 
 Installation
 ============
+Just set the variable at the beginning of the script
 AUTH="TransmissionUsername:TransmissionUserPassword"
 PLEXUSER="PlexUsername"
 DOWNLOADDIR="TransmissionDownloadDir"
