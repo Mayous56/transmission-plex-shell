@@ -39,14 +39,14 @@ do
                                 sudo -u "$PLEXUSER" mkdir -p "$MEDIADIR$LOCATION"
                                 sudo -u "$PLEXUSER" rsync -ra "$DOWNLOADDIR$LOCATION/$NAME" "$MEDIADIR$LOCATION"
                                 TRANSMITTED=`transmission-remote --auth "$AUTH" --torrent "$TORRENTID" --move "$FINISHEDDIR$LOCATION"`
-                                echo "Torrent #$TORRENTID : #$NAME déplacé dans media et finished"
+                                echo "Torrent #$TORRENTID : #$NAME moved to $FINISHEDDIR and $MEDIADIR"
                         elif [ "$COMPARE_RATIO" == 1 ]
                         then
                                 DELETED=`transmission-remote --auth "$AUTH" --torrent "$TORRENTID" --remove-and-delete`
-                                echo "Torrent #$TORRENTID : #$NAME a depasse le ratio. On supprime."
+                                echo "Torrent #$TORRENTID : #$NAME exceeded $MAXRATIO ratio. Suppression."
                         fi
                 else
-                        echo "Torrent #$TORRENTID : #$NAME n'a pas terminé son téléchargement."
+                        echo "Torrent #$TORRENTID : #$NAME still downloading."
                 fi
         fi
 done
